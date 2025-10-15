@@ -72,8 +72,9 @@ The template provides several commands for customization:
 
 ## Example
 
-See `paper.tex` for a complete example with template content that you can replace with your own research.
-The corresponding generated pdf is `paper.pdf`.
+- See `paper.tex` for a complete example with template content that you can replace with your own research.
+  The corresponding generated pdf is `paper.pdf`.
+- `/examples` contains some academic reports I wrote using this template.
 
 ## How to use
 
