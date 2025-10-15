@@ -1,0 +1,10 @@
+*.abs
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.synctex.gz
+*.xmpdata
+*.xmpi
+*.log
