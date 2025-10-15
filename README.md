@@ -29,10 +29,10 @@ Examples of typical uses: semester assignments, lab reports, project deliverable
 
 ## Files
 
-- `confart.cls` - The main document class file (conference article)
-- `paper.tex` - Template document with example content
-- `references.bib` - Bibliography file
-- `/assets` - Folder to keep figures/images used in the paper
+- `/template/confart.cls` - The main document class file (conference article)
+- `/template/paper.tex` - Template document with example content
+- `/template/references.bib` - Bibliography file
+- `/template//assets` - Folder to keep figures/images used in the paper
 
 ## Usage
 
@@ -72,8 +72,8 @@ The template provides several commands for customization:
 
 ## Example
 
-- See `paper.tex` for a complete example with template content that you can replace with your own research.
-  The corresponding generated pdf is `paper.pdf`.
+- See `/template/paper.tex` for a complete example with template content that you can replace with your own research.
+  The corresponding generated pdf is `/template/paper.pdf`.
 - `/examples` contains some academic reports I wrote using this template.
 
 ## How to use
@@ -82,7 +82,7 @@ Recommended (local):
 
 - Install a local LaTeX distribution (e.g., MiKTeX, TeX Live). Instructions can be found in the documentation of LaTeX Workshop extentsion.
 - Use Visual Studio Code with the [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) extension for a smooth editing and build experience. Follow the extension's installation documentation and configure it to use your local TeX distribution.
-- Open this folder in VS Code, open `paper.tex`, and use the LaTeX Workshop build/compile commands (or the side-panel) to produce `paper.pdf`.
+- Open `/template` folder in VS Code, open `paper.tex`, and use the LaTeX Workshop build/compile commands (or the side-panel) to produce `paper.pdf`.
 
 Helpful local compile commands (PowerShell / terminal):
 
@@ -95,9 +95,9 @@ pdflatex paper.tex
 
 Alternative (online):
 
-- If you prefer not to install a local TeX distribution, you can import all files in this repository into Overleaf:
+- If you prefer not to install a local TeX distribution, you can import all files in `/template` folder into Overleaf:
   1.  Create a new project on Overleaf and choose "Upload Project".
-  2.  Upload the contents of this repository (all `.tex`, `.cls`, `.bib`, and `assets/` files). Overleaf will compile the project online.
+  2.  Upload the contents of `template` folder (all `.tex`, `.cls`, `.bib`, and `assets/` files). Overleaf will compile the project online.
 
 ## License
 
