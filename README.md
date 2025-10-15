@@ -32,7 +32,7 @@ Examples of typical uses: semester assignments, lab reports, project deliverable
 - `/template/confart.cls` - The main document class file (conference article)
 - `/template/paper.tex` - Template document with example content
 - `/template/references.bib` - Bibliography file
-- `/template//assets` - Folder to keep figures/images used in the paper
+- `/template/assets` - Folder to keep figures/images used in the paper
 
 ## Usage
 
