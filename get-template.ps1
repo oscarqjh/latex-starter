@@ -28,7 +28,7 @@ function Invoke-Json([string] $Url) {
 }
 
 function Get-TemplateNames() {
-    $url = "$ApiBase/contents/$TemplatesDir?ref=$Branch"
+    $url = "$ApiBase/contents/${TemplatesDir}?ref=$Branch"
     $items = Invoke-Json $url
     $items | Where-Object { $_.type -eq 'dir' } | ForEach-Object { $_.name }
 }
