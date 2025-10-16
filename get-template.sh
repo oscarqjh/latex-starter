@@ -53,12 +53,22 @@ select_template_interactive() {
     print_err "No templates found under '${TEMPLATES_DIR}' in ${OWNER_REPO}@${BRANCH}."
     exit 1
   fi
+  if [ ${#templates[@]} -eq 1 ]; then
+    echo "${templates[0]}"
+    return
+  fi
   printf "Available templates (from %s/%s):\n" "$OWNER_REPO" "$TEMPLATES_DIR"
   for idx in "${!templates[@]}"; do
     printf "  %2d) %s\n" "$((idx+1))" "${templates[$idx]}"
   done
   while true; do
-    read -r -p "Enter a number to select a template: " choice
+    if [ -t 0 ]; then
+      read -r -p "Enter a number to select a template: " choice
+    else
+      print_err "Non-interactive shell detected. Re-run with a template argument, e.g.:"
+      print_err "  curl -fsSL https://raw.githubusercontent.com/${OWNER_REPO}/${BRANCH}/get-template.sh | bash -s -- ${templates[0]}"
+      exit 2
+    fi
     if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 1 ] && [ "$choice" -le ${#templates[@]} ]; then
       template="${templates[$((choice-1))]}"
       echo "$template"

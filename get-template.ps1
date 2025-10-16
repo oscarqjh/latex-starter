@@ -36,11 +36,14 @@ function Get-TemplateNames() {
 function Select-TemplateInteractive() {
     $names = @(Get-TemplateNames)
     if ($names.Count -eq 0) { Write-Err "No templates found under '$TemplatesDir' in $OwnerRepo@$Branch."; exit 1 }
+    if ($names.Count -eq 1) { return $names[0] }
     Write-Host "Available templates (from $OwnerRepo/$TemplatesDir):" -ForegroundColor Cyan
     for ($i=0; $i -lt $names.Count; $i++) { Write-Host ("  {0,2}) {1}" -f ($i+1), $names[$i]) }
     while ($true) {
         $choice = Read-Host 'Enter a number to select a template'
-        if ($choice -match '^[0-9]+$') {
+        if ([string]::IsNullOrWhiteSpace($choice)) {
+            if ($names.Count -eq 1) { return $names[0] }
+        } elseif ($choice -match '^[0-9]+$') {
             $idx = [int]$choice - 1
             if ($idx -ge 0 -and $idx -lt $names.Count) { return $names[$idx] }
         }
