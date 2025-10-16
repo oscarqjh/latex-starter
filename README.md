@@ -17,66 +17,35 @@ This template is aimed at anyone who needs to produce consistently formatted, pr
 
 Examples of typical uses: semester assignments, lab reports, project deliverables, short conference submissions, and quick technical notes.
 
-## Features
+## Quick start: download a template without git
 
-- Clean, professional conference paper layout
-- Support for multiple authors and affiliations
-- Configurable headers and conference information
-- Two-column layout support
-- Proper bibliography formatting
-- PDF/A compliance support
-- Easy customization
+You can fetch a template from this repo without cloning it. The scripts below list all available templates under `templates/` and let you interactively pick one (or pass a template name as an argument). Files are downloaded into a new directory named after your chosen template by default.
 
-## Files
+macOS / Linux:
 
-- `/template/confart.cls` - The main document class file (conference article)
-- `/template/paper.tex` - Template document with example content
-- `/template/references.bib` - Bibliography file
-- `/template//assets` - Folder to keep figures/images used in the paper
+```bash
+curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s --
+# or choose a specific template and destination directory
+curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s -- simple1 MyPaper
+```
 
-## Usage
+Windows (PowerShell):
 
-1. Use `confart` as your document class:
+```powershell
+iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex
+# then pick interactively, or pass args directly:
+get-template -Template simple1 -Dest MyPaper
+```
 
-   ```latex
-   \documentclass[hf]{confart}
-   ```
+Notes:
 
-2. Set your conference header (optional):
+- The list of templates is read from the `templates/` directory in the repository.
+- Environment overrides if you are using a fork:
+  - `OWNER_REPO` (default `oscarqjh/latex-starter`)
+  - `BRANCH` (default `main`)
+  - `TEMPLATES_DIR` (default `templates`)
 
-   ```latex
-   \setConferenceHeader{Your Conference Name}
-   ```
-
-3. Configure your paper details:
-   ```latex
-   \title{Your Paper Title}
-   \author[1]{Your Name}[email=your.email@domain.com]
-   \address[1]{Your Institution, Address}
-   \conference{Conference Information}
-   ```
-
-## Options
-
-- `twocolumn` - Enable two-column layout
-- `hf` - Enable header and footer
-
-## Customization
-
-The template provides several commands for customization:
-
-- `\setConferenceHeader{text}` - Set the conference name in header
-- `\conference{info}` - Set conference information
-- `\AuthorSetup{options}` - Configure author formatting
-- `\AddressSetup{options}` - Configure address formatting
-
-## Example
-
-- See `/template/paper.tex` for a complete example with template content that you can replace with your own research.
-  The corresponding generated pdf is `/template/paper.pdf`.
-- `/examples` contains some academic reports I wrote using this template.
-
-## How to use
+## Manual Download
 
 Recommended (local):
 
@@ -98,6 +67,16 @@ Alternative (online):
 - If you prefer not to install a local TeX distribution, you can import all files in `/template` folder into Overleaf:
   1.  Create a new project on Overleaf and choose "Upload Project".
   2.  Upload the contents of `template` folder (all `.tex`, `.cls`, `.bib`, and `assets/` files). Overleaf will compile the project online.
+
+## Available templates
+
+- `simple1` — see `templates/simple1/README.md` for features, files, options, and usage.
+
+## Example
+
+- See `/template/paper.tex` for a complete example with template content that you can replace with your own research.
+  The corresponding generated pdf is `/template/paper.pdf`.
+- `/examples` contains some academic reports I wrote using this template.
 
 ## License
 
