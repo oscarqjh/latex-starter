@@ -65,8 +65,14 @@ select_template_interactive() {
         exit 2
       fi
     else
-      print_err "Non-interactive shell detected. Re-run with a template argument, e.g.:"
-      print_err "  curl -fsSL https://raw.githubusercontent.com/${OWNER_REPO}/${BRANCH}/get-template.sh | bash -s -- ${templates[0]}"
+      print_err "Non-interactive shell detected. Available templates:"
+      for idx in "${!templates[@]}"; do
+        print_err "  - ${templates[$idx]}"
+      done
+      # Show an example command that works
+      example_template="${templates[0]}"
+      print_err "Example:"
+      print_err "  curl -fsSL https://raw.githubusercontent.com/${OWNER_REPO}/${BRANCH}/get-template.sh | bash -s -- ${example_template} MyPaper"
       exit 2
     fi
     if [[ "$choice" =~ ^[0-9]+$ ]] && [ "$choice" -ge 1 ] && [ "$choice" -le ${#templates[@]} ]; then
