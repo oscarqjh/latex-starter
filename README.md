@@ -23,13 +23,13 @@ You can fetch a template from this repo without cloning it. The scripts below li
 
 **macOS / Linux**:
 
-Interactive session:
+To list available templates:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s --
 ```
 
-or directly pass in arguments:
+Example - download `simple1` template into `MyPaper` folder:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s -- simple1 MyPaper
