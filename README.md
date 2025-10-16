@@ -46,7 +46,7 @@ iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.p
 or directly pass in arguments:
 
 ```powershell
-iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex --TemplateName simple1 -Dest MyPaper
+iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex --Template simple1 -Dest MyPaper
 ```
 
 Notes:
