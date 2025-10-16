@@ -118,5 +118,6 @@ Guidelines:
 - Keep changes minimal and well-documented. If you modify `confart.cls`, explain why and include backward-compatible defaults when possible.
 - If you add new packages or external dependencies, document them in the README.
 - Add example content or tests where appropriate.
+- Adding new templates are most welcomed!
 
 Thanks for improving the template — community contributions make it better for everyone!
