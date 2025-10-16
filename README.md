@@ -43,12 +43,6 @@ Interactive session:
 iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex
 ```
 
-or directly pass in arguments:
-
-```powershell
-iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex --Template simple1 -Dest MyPaper
-```
-
 Notes:
 
 - The list of templates is read from the `templates/` directory in the repository.
