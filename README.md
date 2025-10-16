@@ -21,20 +21,32 @@ Examples of typical uses: semester assignments, lab reports, project deliverable
 
 You can fetch a template from this repo without cloning it. The scripts below list all available templates under `templates/` and let you interactively pick one (or pass a template name as an argument). Files are downloaded into a new directory named after your chosen template by default.
 
-macOS / Linux:
+**macOS / Linux**:
+
+Interactive session:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s --
-# or choose a specific template and destination directory
+```
+
+or directly pass in arguments:
+
+```bash
 curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s -- simple1 MyPaper
 ```
 
-Windows (PowerShell):
+**Windows (PowerShell)**:
+
+Interactive session:
 
 ```powershell
 iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex
-# then pick interactively, or pass args directly:
-get-template -Template simple1 -Dest MyPaper
+```
+
+or directly pass in arguments:
+
+```powershell
+iwr https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.ps1 -UseBasicParsing | iex --TemplateName simple1 -Dest MyPaper
 ```
 
 Notes:
