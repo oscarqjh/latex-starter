@@ -1,0 +1,89 @@
+\section{Introduction}
+\label{sec:intro}
+
+This document provides a template for academic papers based on the CVPR style format.
+This template has been adapted to work as a general-purpose academic paper template, removing conference-specific submission requirements.
+
+%-------------------------------------------------------------------------
+\subsection{Language}
+
+All manuscripts should be in English.
+
+\subsection{Paper structure}
+This template provides a standard academic paper structure with sections for introduction, methodology, experiments, results, and conclusion.
+You can modify the section structure in the main.tex file by editing the input statements.
+
+\subsection{Paper length}
+For most academic venues, papers should follow the specific length requirements of your target conference or journal.
+This template provides good formatting that can be adapted to various venues.
+
+%-------------------------------------------------------------------------
+
+\subsection{Mathematics}
+
+Please number all of your sections and displayed equations as in these examples:
+\begin{equation}
+  E = m\cdot c^2
+  \label{eq:important}
+\end{equation}
+and
+\begin{equation}
+  v = a\cdot t.
+  \label{eq:also-important}
+\end{equation}
+It is important for the reader to be able to refer to any particular equation.
+Just because you did not refer to it in the text does not mean that some future reader might not need to refer to it.
+All authors will benefit from reading Mermin's description of how to write mathematics:
+\url{http://www.pamitc.org/documents/mermin.pdf}.
+
+\subsection{Citations and references}
+
+When citing work, use proper academic citation format. 
+For example, you can cite multiple works \cite{Alpher02,Alpher03,Alpher04}.
+When citing a multi-author paper, you may save space by using ``et alia'', shortened to ``\etal'' (not ``{\em et.\ al.}'' as ``{\em et}'' is a complete word).
+If you use the \verb'\etal' macro provided, then you need not worry about double periods when used at the end of a sentence as in Alpher \etal.
+However, use it only when there are three or more authors.
+
+\begin{figure}[t]
+  \centering
+  \fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+   %\includegraphics[width=0.8\linewidth]{egfigure.eps}
+
+   \caption{Example of caption.
+   It is set in Roman so that mathematics (always set in Roman: $B \sin A = A \sin B$) may be included without an ugly clash.}
+   \label{fig:onecol}
+\end{figure}
+
+\subsection{Figures and tables}
+
+Include figures and tables as needed to support your research.
+Use proper captions and labels so they can be referenced in the text.
+
+\noindent
+Compare the following:\\
+\begin{tabular}{ll}
+ \verb'$conf_a$' &  $conf_a$ \\
+ \verb'$\mathit{conf}_a$' & $\mathit{conf}_a$
+\end{tabular}\\
+See The \TeX book, p165.
+
+The space after \eg, meaning ``for example'', should not be a sentence-ending space.
+So \eg is correct, {\em e.g.} is not.
+The provided \verb'\eg' macro takes care of this.
+
+\begin{figure*}
+  \centering
+  \begin{subfigure}{0.68\linewidth}
+    \fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+    \caption{An example of a subfigure.}
+    \label{fig:short-a}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}{0.28\linewidth}
+    \fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+    \caption{Another example of a subfigure.}
+    \label{fig:short-b}
+  \end{subfigure}
+  \caption{Example of a short caption, which should be centered.}
+  \label{fig:short}
+\end{figure*}

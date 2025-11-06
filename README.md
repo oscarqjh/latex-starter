@@ -51,6 +51,11 @@ Notes:
   - `BRANCH` (default `main`)
   - `TEMPLATES_DIR` (default `templates`)
 
+## Available templates
+
+- `simple1` — see `templates/simple1/README.md` for features, files, options, and usage.
+- `cvpr2026` — see `templates/cvpr2026/README.md` for features, files, options, and usage.
+
 ## Manual Download
 
 Recommended (local):
@@ -74,10 +79,6 @@ Alternative (online):
   1.  Create a new project on Overleaf and choose "Upload Project".
   2.  Upload the contents of `template` folder (all `.tex`, `.cls`, `.bib`, and `assets/` files). Overleaf will compile the project online.
 
-## Available templates
-
-- `simple1` — see `templates/simple1/README.md` for features, files, options, and usage.
-
 ## Example
 
 - See `/template/paper.tex` for a complete example with template content that you can replace with your own research.
@@ -86,7 +87,18 @@ Alternative (online):
 
 ## License
 
-This template is based on the CEUR Workshop Proceedings class and is available under the LaTeX Project Public License (LPPL)."
+This repository is licensed under the MIT License. See the `LICENSE` file for the full text and permissions granted.
+
+## Acknowledgments
+
+The templates in this repository are derived from their original versions, which were provided by various conference workshops. They have been adapted here for a more general-purpose use.
+
+All credit for the original work goes to the respective authors and conference organizers. Where possible we list the templates included in this repository and their likely origins below; if you need precise licensing or provenance for a particular template, consult the original conference author kit or contact the original authors.
+
+- `simple1` — a small conference-style article template (see `templates/simple1/`). Adapted here for this starter repository.
+- `cvpr2026` — adapted from the official CVPR 2026 author kit and style files (see `templates/cvpr2026/`). All credit to the original CVPR 2026 materials and their authors/organizers.
+
+If you authored one of the original templates and would like a different attribution or license notice included, please open an issue or submit a pull request and we'll update the attribution promptly.
 
 ## Contributing
 
