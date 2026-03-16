@@ -55,6 +55,8 @@ Notes:
 
 - `simple1` — see `templates/simple1/README.md` for features, files, options, and usage.
 - `cvpr2026` — see `templates/cvpr2026/README.md` for features, files, options, and usage.
+- `ntu-phd-thesis` — see `templates/ntu-phd-thesis/README.md` for features, files, options, and usage.
+- `ntu-ccds-fyp` — see `templates/ntu-ccds-fyp/README.md` for features, files, options, and usage.
 
 ## Manual Download
 
@@ -97,6 +99,8 @@ All credit for the original work goes to the respective authors and conference o
 
 - `simple1` — a small conference-style article template (see `templates/simple1/`). Adapted here for this starter repository.
 - `cvpr2026` — adapted from the official CVPR 2026 author kit and style files (see `templates/cvpr2026/`). All credit to the original CVPR 2026 materials and their authors/organizers.
+- `ntu-phd-thesis` — NTU PhD thesis template (see `templates/ntu-phd-thesis/`). Adapted from the official NTU thesis format.
+- `ntu-ccds-fyp` — NTU CCDS Final Year Project report template (see `templates/ntu-ccds-fyp/`). Adapted from the official NTU CCDS FYP format.
 
 If you authored one of the original templates and would like a different attribution or license notice included, please open an issue or submit a pull request and we'll update the attribution promptly.
 

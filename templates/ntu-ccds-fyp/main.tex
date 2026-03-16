@@ -1,0 +1,66 @@
+% The FYP template is designed according to NTU SCSE FYP guidelines on https://www3.ntu.edu.sg/scse/fyp/UsefulInfo/Report%20Guide.pdf.
+
+% Credit
+% Original version by Vincent Ribli
+% https://www.overleaf.com/latex/templates/ntu-scse-fyp-template/kwdtcbqmjctk
+
+% Revised by Prof Loy Chen Change
+% 23 Aug 2024 - Replace SCSE with CCDS
+
+\documentclass[pdftex, 12pt, a4paper]{report}
+\usepackage{newtxtext, newtxmath}
+\usepackage[top=3cm, bottom=3cm, left=3.5cm, right=3cm]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{booktabs}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage[sorting=none]{biblatex}
+
+\addbibresource{bib.bib}
+\setstretch{1.5}
+\setlength{\cftfigindent}{0pt}
+\setlength{\cfttabindent}{0pt}
+\renewcommand{\cftdotsep}{1}
+
+% change the following
+\title{\uppercase{Development of Smart Contracts}}
+\newcommand\fypcode{SCSE8338}
+\author{Harvey Specter}
+\date{2024}
+\newcommand\degree{Bachelor of Engineering in Computer Science}
+
+\begin{document}
+\input{cover.tex}
+\input{title.tex}
+
+\setcounter{page}{1}
+\pagenumbering{roman}
+
+\input{abstract.tex}
+\input{acknowledgements.tex}
+
+\pagebreak
+\addcontentsline{toc}{chapter}{Contents}
+\tableofcontents
+
+\pagebreak
+\addcontentsline{toc}{chapter}{List of Tables}
+\listoftables
+
+\pagebreak
+\addcontentsline{toc}{chapter}{List of Figures}
+\listoffigures
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+\input{intro.tex}
+
+\printbibliography
+
+\end{document}

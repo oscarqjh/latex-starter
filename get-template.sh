@@ -2,6 +2,9 @@
 set -euo pipefail
 
 # Cross-platform Bash installer for LaTeX templates from this repo.
+# Requires only curl and standard POSIX utilities (grep, sed, tr).
+# jq is used if available but is NOT required.
+#
 # Usage:
 #   curl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s -- [template-name] [destination-dir]
 #
@@ -37,13 +40,10 @@ fetch_templates() {
     echo "$contents_json" | jq -r '.[] | select(.type=="dir") | .name'
     return
   fi
-  # Fallback parser for JSON without jq
-  echo "$contents_json" | tr '\n' ' ' | sed 's/},/}\n/g' | awk '
-    BEGIN { RS="\n" }
-    /"type"\s*:\s*"dir"/ {
-      match($0, /"name"\s*:\s*"([^\"]+)"/, m);
-      if (m[1] != "") print m[1];
-    }'
+  # Fallback parser for JSON without jq (POSIX-compatible)
+  echo "$contents_json" | tr '\n' ' ' | sed 's/},/}\n/g' |
+    grep '"type"' | grep '"dir"' |
+    sed -n 's/.*"name" *: *"\([^"]*\)".*/\1/p'
 }
 
 select_template_interactive() {
@@ -53,9 +53,9 @@ select_template_interactive() {
     print_err "No templates found under '${TEMPLATES_DIR}' in ${OWNER_REPO}@${BRANCH}."
     exit 1
   fi
-  printf "Available templates (from %s/%s):\n" "$OWNER_REPO" "$TEMPLATES_DIR"
+  printf "Available templates (from %s/%s):\n" "$OWNER_REPO" "$TEMPLATES_DIR" 1>&2
   for idx in "${!templates[@]}"; do
-    printf "  %2d) %s\n" "$((idx+1))" "${templates[$idx]}"
+    printf "  %2d) %s\n" "$((idx+1))" "${templates[$idx]}" 1>&2
   done
   while true; do
     if [ -t 0 ]; then
@@ -97,17 +97,14 @@ download_template_files() {
   if has_jq; then
     mapfile -t paths < <(echo "$tree_json" | jq -r --arg p "${TEMPLATES_DIR}/${template_name}/" '.tree[] | select(.type=="blob" and (.path|startswith($p))) | .path')
   else
-    # Fallback parsing: extract blob paths and filter prefix
+    # Fallback parsing: extract blob paths and filter prefix (POSIX-compatible)
     paths=()
     while IFS= read -r line; do
       paths+=("$line")
-    done < <(echo "$tree_json" | tr '\n' ' ' | sed 's/},/}\n/g' | awk '
-      BEGIN { RS="\n" }
-      /"type"\s*:\s*"blob"/ {
-        if (match($0, /"path"\s*:\s*"([^\"]+)"/, m)) {
-          print m[1];
-        }
-      }' | awk -v p="${TEMPLATES_DIR}/${template_name}/" 'index($0,p)==1')
+    done < <(echo "$tree_json" | tr '\n' ' ' | sed 's/},/}\n/g' |
+      grep '"type"' | grep '"blob"' |
+      sed -n 's/.*"path" *: *"\([^"]*\)".*/\1/p' |
+      grep "^${TEMPLATES_DIR}/${template_name}/")
   fi
 
   if [ ${#paths[@]} -eq 0 ]; then
