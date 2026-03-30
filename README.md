@@ -21,6 +21,12 @@ Examples of typical uses: semester assignments, lab reports, project deliverable
 
 You can fetch a template from this repo without cloning it. The scripts below list all available templates under `templates/` and let you interactively pick one (or pass a template name as an argument). Files are downloaded into a new directory named after your chosen template by default.
 
+**Use with AI agents** — Copy the prompt below and paste it into your CLI AI agent (e.g. Claude Code) to get started.
+
+```
+You are helping me download a LaTeX template from the latex-starter library (https://github.com/oscarqjh/latex-starter).\n\nAvailable templates:\n- simple1: A simple conference-style article template for reports and short papers.\n- cvpr2026: CVPR 2026 conference paper template with supplementary sections.\n- ntu-phd-thesis: NTU PhD thesis template with chapters, appendices, and hardbound cover.\n- ntu-ccds-fyp: NTU CCDS Final Year Project report template.\n\nAsk me:\n1. Which template I want to download\n2. What folder I want to download it into\n\nThen run:\ncurl -fsSL https://raw.githubusercontent.com/oscarqjh/latex-starter/main/get-template.sh | bash -s -- <template-name> <folder-name>\n\nIf I ask about other templates or want the latest list, fetch the README from:\nhttps://raw.githubusercontent.com/oscarqjh/latex-starter/main/README.md
+```
+
 **macOS / Linux**:
 
 To list available templates:
